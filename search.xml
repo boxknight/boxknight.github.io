@@ -7,6 +7,11 @@
       <categories>
         <category>C++</category>
       </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>编程</tag>
+        <tag>帮助性文档</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[超详细：建立属于自己的网站]]></title>
@@ -15,6 +20,13 @@
       <categories>
         <category>建站</category>
       </categories>
+      <tags>
+        <tag>帮助性文档</tag>
+        <tag>建站</tag>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Markdown-字体\颜色\大小]]></title>
@@ -23,6 +35,11 @@
       <categories>
         <category>Markdown</category>
       </categories>
+      <tags>
+        <tag>帮助性文档</tag>
+        <tag>建站</tag>
+        <tag>Markdown</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[链表]]></title>
@@ -31,5 +48,10 @@
       <categories>
         <category>C++</category>
       </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>编程</tag>
+        <tag>数据结构与算法</tag>
+      </tags>
   </entry>
 </search>
