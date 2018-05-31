@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[停电快乐]]></title>
+    <url>%2F2018%2F05%2F31%2F%E5%81%9C%E7%94%B5%E5%BF%AB%E4%B9%90%2F</url>
+    <content type="text"><![CDATA[停电快乐]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[C++文件操作与文件流]]></title>
     <url>%2F2018%2F05%2F15%2FC-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E6%96%87%E4%BB%B6%E6%B5%81%2F</url>
     <content type="text"><![CDATA[C++文件操作与文件流：较为详细的总结 头函数#include&lt;fstream&gt; 文件流类与文件流对象文件流类 文件流类 描述 ifstream 支持从磁盘文件向缓冲区输入 ofstream 支持从缓冲区向磁盘文件输入 fstream 支持对磁盘文件的输入输出 文件流对象定义一个文件流对象fstream fileclass;ofstream fileclass;ifstream fileclass; 文件的打开与关闭文件的打开调用成员函数openfilecalss.open(&quot;文件名&quot;，输入输出方式); 定义文件流对象时指定参数fstream fileclass(&quot;文件名&quot;，输入输出方式); 输入输出方式可以用按位与|的方式组合 输入输出方式设置值 作用 ios::in 以输入方式打开文件 ios::out 以输出方式创建并打开文件，若有此名文件则清空该文件 ios::app 以输入方式打开文件，写入的数据添加到文件末尾 ios::ate 打开一个已有文件，并将文件指针指向末尾 ios::trunc 存在文件则删除文件原内容，不存在则新建文件 ios::binary 以二进制方式打开文件，默认为ASCll方式打开 ios::nocreate 打开已有文件，若文件不存在则打开失败 ios::noreplace 文件若不存在则建立文件，文集存在则操作失败 文件的关闭调用成员函数关闭文件fileclass.close() 本操作实际是接触文件与文件流的关系 对ASCll文件的操作1-使用 &lt;&lt; 与 &gt;&gt; 即可2-使用put get getline 等成员函数 对二进制文件的操作读写使用成员函数读 : fileclass.read(字符指针，字节数)写 : fileclass.write(字符指针，字节数) 与文件指针有关的流成员函数 成员函数 作用 gcount() 得到最后一次输入所读入的字节数 tellg() 得到输入文件位置标记的当前位置 tellp() 得到输出文件位置标记的当前位置 seekg(文件位置) 将输入文件跳转到指定位置 seekg(位移量，参照位置) 将输入文件按参照位置和位移量移动 seekp(文件位置) 将输出文件跳转到指定位置 seekp(位移量，参照位置) 将输出文件按参照位置和位移量移动 参照位置 位置 ios::beg 文件开头（默认值） ios::cur 当前位置 ios::end 文件末尾]]></content>
