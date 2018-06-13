@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[string类函数汇总]]></title>
     <url>%2F2018%2F06%2F12%2Fstring%E7%B1%BB%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB%2F</url>
-    <content type="text"><![CDATA[string类函数汇总 头函数1#include&lt;string&gt; 构造函数123456789string s; //生成新的空字符串string s(string); //拷贝构造函数string s(string,int len); //将str内始于len的部分当作字符串的初值string s(string,int be,int len); //将str始于be且长度顶多len的部分作为字符串的初值string s(char*); //将C类型字符串作为s的初值string s(char*,int len); //将C类型字符串前len个字符作为字符串s的初值string s(int n,char c); //生成一个字符串，包含n个c字符s.~string(); //析构函数 C++字符串和C字符串的转换`C++ str.data()]]></content>
+    <content type="text"><![CDATA[string类函数汇总 头函数1#include&lt;string&gt; 构造函数12345678string s; //生成新的空字符串string s(string); //拷贝构造函数string s(string,int len); //将str内始于len的部分当作字符串的初值string s(string,int be,int len); //将str始于be且长度顶多len的部分作为字符串的初值string s(char*); //将C类型字符串作为s的初值string s(char*,int len); //将C类型字符串前len个字符作为字符串s的初值string s(int n,char c); //生成一个字符串，包含n个c字符s.~string(); //析构函数 C++字符串和C字符串的转换12str.data() //以字符数组的形式返回字符串内容(不含'\0')str.c_str() //以字符数组的形式返回字符串内容(含'\0') 获取字符串大小与容量1234str.size() //返回字符串长度str.length() //功能同上str.empty() //判断字符串是否为空str.max_size()//获得最多能包含的字符数 字符串中的元素存取12str[N] //获取字符串N位置的字符str.at(N) //功能同上 字符串的比较函数12 //string类之间支持 == 、&gt; 、&lt; 、&gt;= 、&lt;=str.compare() //待完善 更改字符串内容1234567891011//string支持 =、+、+=str.assign(str_2) //把str_2复制给strstr.assign(str_2,be,ed) //把str_2中区间为(be,ed]的元素赋值给strstr.assign(int N,char x) //把N个字符x赋值给strstr.clear() //清空字符串str.erase(be,ed) //删除区间为(be,ed]的元素str.erase(pos) //删除pos位置的元素（pos为迭代器）str.append(str_2) //增加str_2str.append(str_2,be,ed) //在str后增加str_2中区间为(be,ed]的元素str.append(int N,char x) //在str后增加N个字符xstr.insert(str_2,N) //在N位置后插入str_2]]></content>
       <categories>
         <category>C++</category>
       </categories>
