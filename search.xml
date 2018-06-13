@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[string类函数汇总]]></title>
+    <url>%2F2018%2F06%2F12%2Fstring%E7%B1%BB%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB%2F</url>
+    <content type="text"><![CDATA[string类函数汇总 头函数1#include&lt;string&gt; 构造函数123456789string s; //生成新的空字符串string s(string); //拷贝构造函数string s(string,int len); //将str内始于len的部分当作字符串的初值string s(string,int be,int len); //将str始于be且长度顶多len的部分作为字符串的初值string s(char*); //将C类型字符串作为s的初值string s(char*,int len); //将C类型字符串前len个字符作为字符串s的初值string s(int n,char c); //生成一个字符串，包含n个c字符s.~string(); //析构函数 C++字符串和C字符串的转换`C++ str.data()]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>编程</tag>
+        <tag>帮助性文档</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[停电快乐]]></title>
     <url>%2F2018%2F05%2F31%2F%E5%81%9C%E7%94%B5%E5%BF%AB%E4%B9%90%2F</url>
     <content type="text"><![CDATA[停电快乐]]></content>
