@@ -89,18 +89,18 @@
 
 
 
-<meta name="description" content="string类函数汇总">
+<meta name="description" content="string类常用函数汇总">
 <meta name="keywords" content="C++,编程,帮助性文档">
 <meta property="og:type" content="article">
-<meta property="og:title" content="string类函数汇总">
+<meta property="og:title" content="string类常用函数汇总">
 <meta property="og:url" content="http://www.kuunnn.cc/2018/06/12/string类函数汇总/index.html">
 <meta property="og:site_name" content="“铜锭世界”">
-<meta property="og:description" content="string类函数汇总">
+<meta property="og:description" content="string类常用函数汇总">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-13T15:44:04.900Z">
+<meta property="og:updated_time" content="2018-07-01T09:52:07.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="string类函数汇总">
-<meta name="twitter:description" content="string类函数汇总">
+<meta name="twitter:title" content="string类常用函数汇总">
+<meta name="twitter:description" content="string类常用函数汇总">
 
 
 
@@ -136,7 +136,7 @@
 
 
 
-  <title>string类函数汇总 | “铜锭世界”</title>
+  <title>string类常用函数汇总 | “铜锭世界”</title>
   
 
 
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">string类函数汇总</h1>
+          <h1 class="post-title" itemprop="name headline">string类常用函数汇总</h1>
         
 
         <div class="post-meta">
@@ -386,7 +386,7 @@
 
           
           
-             <span id="/2018/06/12/string类函数汇总/" class="leancloud_visitors" data-flag-title="string类函数汇总">
+             <span id="/2018/06/12/string类函数汇总/" class="leancloud_visitors" data-flag-title="string类常用函数汇总">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -417,7 +417,7 @@
       
 
       
-        <p> string类函数汇总<br> <a id="more"></a></p>
+        <p> <strong>string类常用函数汇总</strong><br> <a id="more"></a></p>
 <h1 id="头函数"><a href="#头函数" class="headerlink" title="头函数"></a>头函数</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br></pre></td></tr></table></figure>
 <h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s;                        <span class="comment">//生成新的空字符串</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="built_in">string</span>)</span></span>;                <span class="comment">//拷贝构造函数</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="built_in">string</span>,<span class="keyword">int</span> len)</span></span>;        <span class="comment">//将str内始于len的部分当作字符串的初值</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="built_in">string</span>,<span class="keyword">int</span> be,<span class="keyword">int</span> len)</span></span>; <span class="comment">//将str始于be且长度顶多len的部分作为字符串的初值</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="keyword">char</span>*)</span></span>;                 <span class="comment">//将C类型字符串作为s的初值</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="keyword">char</span>*,<span class="keyword">int</span> len)</span></span>;         <span class="comment">//将C类型字符串前len个字符作为字符串s的初值</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">char</span> c)</span></span>;          <span class="comment">//生成一个字符串，包含n个c字符</span></span><br><span class="line">s.~<span class="built_in">string</span>();                     <span class="comment">//析构函数</span></span><br></pre></td></tr></table></figure>
 <h1 id="C-字符串和C字符串的转换"><a href="#C-字符串和C字符串的转换" class="headerlink" title="C++字符串和C字符串的转换"></a>C++字符串和C字符串的转换</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.data()    <span class="comment">//以字符数组的形式返回字符串内容(不含'\0')</span></span><br><span class="line">str.c_str()   <span class="comment">//以字符数组的形式返回字符串内容(含'\0')</span></span><br></pre></td></tr></table></figure>
