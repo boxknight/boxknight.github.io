@@ -1,5 +1,5 @@
+http://www.kuunnn.cc/articles/类中的构造函数的调用顺序.html
 http://www.kuunnn.cc/articles/string类函数汇总.html
 http://www.kuunnn.cc/articles/停电快乐.html
 http://www.kuunnn.cc/articles/C-文件操作与文件流.html
 http://www.kuunnn.cc/articles/建立属于自己的网站.html
-http://www.kuunnn.cc/articles/Markdown-字体颜色大小.html
