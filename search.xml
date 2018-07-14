@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[C++：类中的构造函数的调用顺序]]></title>
     <url>%2F%2Farticles%2F%E7%B1%BB%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F.html</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[C++类中各种类构造函数的调用顺序汇总。 C++中，对象是由“底层向上”开始构造，因此在创建实例时，先执行基类的构造函数，再执行派生类的构造函数。 如果只是忘记规则需要翻阅，可以直接跳转到 总结 。如果想更清晰的明白，可以慢慢阅读全文。 单继承 如果遇到多级继承，构造函数会先调用父类的构造函数。如上图，A是B的父类，B是C的父类。此时如果创建C类的实例，就会先执行A类的构造函数，再执行B类的构造函数，最后执行C类的构造函数。如下图代码。 123456789101112131415161718192021222324252627282930313233#include&lt;iostream&gt;using namespace std;class A&#123; public: A()&#123; cout&lt;&lt;"A OK"&lt;&lt;endl; &#125; &#125;;class B:public A&#123; public: B()&#123; cout&lt;&lt;"B OK"&lt;&lt;endl; &#125;&#125;; class C:public B&#123; public: C()&#123; cout&lt;&lt;"C OK"&lt;&lt;endl; &#125;&#125;;int main()&#123; A a; cout&lt;&lt;endl; B b; cout&lt;&lt;endl; C c; return 0;&#125; 上述代码的执行结果为 12345678A OKA OKB OKA OKB OKC OK 由此我们可以看出，再在多级继承中，C++会先调用最底层基类的构造函数，再一层一层的向上调用。 也可以这样理解，在创建C类的实例时，先调用其父类B类的构造函数，在调用B类构造函数时，则会先调用B类的父类A类的构造函数，由于A类没有父类，因此在执行完A类构造函数后，再执行B类构造函数，最后执行C类构造函数 多继承 如果一个派生类有两个父类时，构造函数也是由父类先构造，不过父类构造函数的调用顺序是由继承列表所规定的顺序所决定的。 1234567891011121314151617181920212223242526272829#include&lt;iostream&gt;using namespace std;class A&#123; public: A()&#123; cout&lt;&lt;"A OK"&lt;&lt;endl; &#125; &#125;;class B&#123; public: B()&#123; cout&lt;&lt;"B OK"&lt;&lt;endl; &#125;&#125;; class C:public A,B&#123; //继承顺序 public: C()&#123; cout&lt;&lt;"C OK"&lt;&lt;endl; &#125;&#125;;int main()&#123; C c; return 0;&#125; 由于C类的继承顺序是A——B，所以先调用A类的构造函数，再调用B类的构造函数。程序运行结果如下。 123A OKB OKC OK 如果我们把C类的继承顺序修改成class C:public B,A,那么程序运行结果就会变成 123B OKA OKC OK]]></content>
       <tags>
         <tag>C++</tag>
         <tag>编程</tag>
