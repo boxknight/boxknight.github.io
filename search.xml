@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C语言常用查询表]]></title>
+    <url>%2F%2Farticles%2FC%E8%AF%AD%E8%A8%80%E5%B8%B8%E7%94%A8%E6%9F%A5%E8%AF%A2%E8%A1%A8.html</url>
+    <content type="text"><![CDATA[转义字符/数据类型与取值范围/格式字符/ASCII 转义字符 转移字符 字符 \’ ‘ \” “ \? ? \a 警告 \b 退格 \f 换页 \n 换行 \r 回车 \t 水平制表符 \v 垂直制表符 \o \oo \ooo(o为八进制数字) 表示八进制对应的ASCII字符 \xh(h为十六进制数字) 表示十六进制对应的ASCII字符 数据类型与取值范围 数据类型 字节 取值范围 int 2 -2^15~(2^15-1) int 4 -2^31~(2^31-1) unsigned int 2 0~(2^16-1) unsigned int 4 0~(2^32-1) short 2 -2^15~(2^15-1) unsigned short 2 0~(2^16-1) long 4 -2^31~(2^31-1) usigned long 4 0~(2^32-1) long long 8 -2^63~(2^63-1) usigned long long 4 0~(2^64-1) signed char 1 -128~127 unsigned char 1 0~255 float 4 0 &amp; 1.2*10^-38~3.4*10^38(绝对值/有效数字为6) double 8 0 &amp; 2.3*10^-308~1.7*10^308(绝对值/有效数字为15) long duble 16 0 &amp; 3.4*10^-4932~1.1*10^4932(绝对值/有效数字为19) 未完待续2018/09/01/16：31]]></content>
+      <categories>
+        <category>C/C++</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+        <tag>编程</tag>
+        <tag>帮助性文档</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C++：类中的构造函数的调用顺序]]></title>
     <url>%2F%2Farticles%2F%E7%B1%BB%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F.html</url>
     <content type="text"><![CDATA[C++类中各种类构造函数的调用顺序汇总。 C++中，对象是由“底层向上”开始构造，因此在创建实例时，先执行基类的构造函数，再执行派生类的构造函数。 如果只是忘记规则需要翻阅，可以直接跳转到 总结 。如果想更清晰的明白，可以慢慢阅读全文。 单继承 如果遇到多级继承，构造函数会先调用父类的构造函数。如上图，A是B的父类，B是C的父类。此时如果创建类C的实例，就会先执行类A的构造函数，再执行类B的构造函数，最后执行类C的构造函数。如下图代码。 123456789101112131415161718192021222324252627282930313233#include&lt;iostream&gt;using namespace std;class A&#123; public: A()&#123; cout&lt;&lt;"A OK"&lt;&lt;endl; &#125; &#125;;class B:public A&#123; public: B()&#123; cout&lt;&lt;"B OK"&lt;&lt;endl; &#125;&#125;; class C:public B&#123; public: C()&#123; cout&lt;&lt;"C OK"&lt;&lt;endl; &#125;&#125;;int main()&#123; A a; cout&lt;&lt;endl; B b; cout&lt;&lt;endl; C c; return 0;&#125; 上述代码的执行结果为 12345678A OKA OKB OKA OKB OKC OK 由此我们可以看出，再在多级继承中，C++会先调用最底层基类的构造函数，再一层一层的向上调用。 也可以这样理解，在创建类C的实例时，先调用其父类类B的构造函数，在调用类B构造函数时，则会先调用B类的父类类A的构造函数，由于类A没有父类，因此在执行完类A构造函数后，再执行类B构造函数，最后执行类C构造函数 多继承 如果一个派生类有两个父类时，构造函数也是由父类先构造，不过父类构造函数的调用顺序是由继承列表所规定的顺序所决定的。 1234567891011121314151617181920212223242526272829#include&lt;iostream&gt;using namespace std;class A&#123; public: A()&#123; cout&lt;&lt;"A OK"&lt;&lt;endl; &#125; &#125;;class B&#123; public: B()&#123; cout&lt;&lt;"B OK"&lt;&lt;endl; &#125;&#125;; class C:public A,B&#123; //继承顺序 public: C()&#123; cout&lt;&lt;"C OK"&lt;&lt;endl; &#125;&#125;;int main()&#123; C c; return 0;&#125; 由于类C的继承顺序是A——B，所以先调用类A的构造函数，再调用类B的构造函数。程序运行结果如下。 123A OKB OKC OK 如果我们把类C的继承顺序修改成class C:public B,A,那么程序运行结果就会变成 123B OKA OKC OK 如果有遇到多继承的多级继承，则按照“先左后右，先父后子”的顺序执行类的构造函数。 虚继承当存在虚继承时，无论派生类的继承列表顺序为什么时，都先调用虚基类的构造函数。 1234567891011121314151617181920212223242526272829303132333435#include&lt;iostream&gt;using namespace std;class A&#123; public: A()&#123; cout&lt;&lt;"A OK"&lt;&lt;endl; &#125; &#125;;class B&#123; public: B()&#123; cout&lt;&lt;"B OK"&lt;&lt;endl; &#125;&#125;; class C:public virtual A&#123; public: C()&#123; cout&lt;&lt;"C OK"&lt;&lt;endl; &#125;&#125;;class D:public B,C&#123; public: D()&#123; cout&lt;&lt;"D OK"&lt;&lt;endl; &#125;&#125;;int main()&#123; D d; return 0;&#125; 如上图代码，虽然类D的继承顺序为先B后C，按上文“先左后右，先父后子”的顺序，应该先执行类B的构造函数，再执行类A的构造函数，但由于类C虚继承了类A，因此程序的运行结果如下 1234A OKB OKC OKD OK 优先执行虚基类的构造函数。 成员类如果在类中存在成员类，则成员类构造函数的执行先于类的构造函数，后于类的父类的构造函数。 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;iostream&gt;using namespace std;class A &#123;public: A() &#123; cout &lt;&lt; "A OK" &lt;&lt; endl; &#125;&#125;;class B &#123;public: B() &#123; cout &lt;&lt; "B OK" &lt;&lt; endl; &#125;&#125;;class C &#123;public: C() &#123; cout &lt;&lt; "C OK" &lt;&lt; endl; &#125;&#125;;class D :public B, C &#123;private: A a;public: D() &#123; cout &lt;&lt; "D OK" &lt;&lt; endl; &#125;&#125;;int main() &#123; D d; return 0;&#125; 上述程序中，类D中拥有一个类A的成员类，且拥有父类类B、类C，其程序运行结果为 1234B OKC OKA OKD OK 总结类构造函数的执行顺序为 1、虚基类构造函数执行2、基类构造函数按“先左后右，先父后子”的顺序执行3、成员类构造函数执行4、类自生构造函数执行 上述文章由我自己总结而成，难免存在一些错误、疏漏、无法理解的语句等问题，如果您发现错误、想要补充、有更好的表达方式，希望您可以给我发邮件，我的邮箱 tpenbox@outlook.com 本网站所有文章执行 CC BY-NC-SA 4.0 协议。希望您不要伤害熬夜好多为了维护网站且弱小无助寂寞的我。蟹蟹~！]]></content>
       <tags>
-        <tag>C++</tag>
+        <tag>C/C++</tag>
         <tag>编程</tag>
         <tag>帮助性文档</tag>
       </tags>
@@ -15,10 +28,10 @@
     <url>%2F%2Farticles%2Fstring%E7%B1%BB%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB.html</url>
     <content type="text"><![CDATA[string类常用函数汇总 头函数1#include&lt;string&gt; 构造函数12345678string s; //生成新的空字符串string s(string); //拷贝构造函数string s(string,int len); //将str内始于len的部分当作字符串的初值string s(string,int be,int len); //将str始于be且长度顶多len的部分作为字符串的初值string s(char*); //将C类型字符串作为s的初值string s(char*,int len); //将C类型字符串前len个字符作为字符串s的初值string s(int n,char c); //生成一个字符串，包含n个c字符s.~string(); //析构函数 C++字符串和C字符串的转换12str.data() //以字符数组的形式返回字符串内容(不含'\0')str.c_str() //以字符数组的形式返回字符串内容(含'\0') 获取字符串大小与容量1234str.size() //返回字符串长度str.length() //功能同上str.empty() //判断字符串是否为空str.max_size()//获得最多能包含的字符数 字符串中的元素存取12str[N] //获取字符串N位置的字符str.at(N) //功能同上 字符串的比较函数12 //string类之间支持 == 、&gt; 、&lt; 、&gt;= 、&lt;=str.compare() //待完善 更改字符串内容1234567891011//string支持 =、+、+=str.assign(str_2) //把str_2复制给strstr.assign(str_2,be,ed) //把str_2中区间为(be,ed]的元素赋值给strstr.assign(int N,char x) //把N个字符x赋值给strstr.clear() //清空字符串str.erase(be,ed) //删除区间为(be,ed]的元素str.erase(pos) //删除pos位置的元素（pos为迭代器）str.append(str_2) //增加str_2str.append(str_2,be,ed) //在str后增加str_2中区间为(be,ed]的元素str.append(int N,char x) //在str后增加N个字符xstr.insert(str_2,N) //在N位置后插入str_2]]></content>
       <categories>
-        <category>C++</category>
+        <category>C/C++</category>
       </categories>
       <tags>
-        <tag>C++</tag>
+        <tag>C/C++</tag>
         <tag>编程</tag>
         <tag>帮助性文档</tag>
       </tags>
@@ -36,10 +49,10 @@
     <url>%2F%2Farticles%2FC-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E6%96%87%E4%BB%B6%E6%B5%81.html</url>
     <content type="text"><![CDATA[C++文件操作与文件流：较为详细的总结 头函数#include&lt;fstream&gt; 文件流类与文件流对象文件流类 文件流类 描述 ifstream 支持从磁盘文件向缓冲区输入 ofstream 支持从缓冲区向磁盘文件输入 fstream 支持对磁盘文件的输入输出 文件流对象定义一个文件流对象fstream fileclass;ofstream fileclass;ifstream fileclass; 文件的打开与关闭文件的打开调用成员函数openfilecalss.open(&quot;文件名&quot;，输入输出方式); 定义文件流对象时指定参数fstream fileclass(&quot;文件名&quot;，输入输出方式); 输入输出方式可以用按位与|的方式组合 输入输出方式设置值 作用 ios::in 以输入方式打开文件 ios::out 以输出方式创建并打开文件，若有此名文件则清空该文件 ios::app 以输入方式打开文件，写入的数据添加到文件末尾 ios::ate 打开一个已有文件，并将文件指针指向末尾 ios::trunc 存在文件则删除文件原内容，不存在则新建文件 ios::binary 以二进制方式打开文件，默认为ASCll方式打开 ios::nocreate 打开已有文件，若文件不存在则打开失败 ios::noreplace 文件若不存在则建立文件，文集存在则操作失败 文件的关闭调用成员函数关闭文件fileclass.close() 本操作实际是接触文件与文件流的关系 对ASCll文件的操作1-使用 &lt;&lt; 与 &gt;&gt; 即可2-使用put get getline 等成员函数 对二进制文件的操作读写使用成员函数读 : fileclass.read(字符指针，字节数)写 : fileclass.write(字符指针，字节数) 与文件指针有关的流成员函数 成员函数 作用 gcount() 得到最后一次输入所读入的字节数 tellg() 得到输入文件位置标记的当前位置 tellp() 得到输出文件位置标记的当前位置 seekg(文件位置) 将输入文件跳转到指定位置 seekg(位移量，参照位置) 将输入文件按参照位置和位移量移动 seekp(文件位置) 将输出文件跳转到指定位置 seekp(位移量，参照位置) 将输出文件按参照位置和位移量移动 参照位置 位置 ios::beg 文件开头（默认值） ios::cur 当前位置 ios::end 文件末尾]]></content>
       <categories>
-        <category>C++</category>
+        <category>C/C++</category>
       </categories>
       <tags>
-        <tag>C++</tag>
+        <tag>C/C++</tag>
         <tag>编程</tag>
         <tag>帮助性文档</tag>
       </tags>

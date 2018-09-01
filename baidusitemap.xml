@@ -4,14 +4,38 @@
 
     
   <url>
+    <loc>http://www.kuunnn.cc//articles/C%E8%AF%AD%E8%A8%80%E5%B8%B8%E7%94%A8%E6%9F%A5%E8%AF%A2%E8%A1%A8.html</loc>
+    <lastmod>2018-09-01T08:31:39.647Z</lastmod>
+    <data>
+        <display>
+        <title>C语言常用查询表</title>
+        <pubTime>2018-09-01T07:51:51.000Z</pubTime>
+        
+        <tag>C/C++</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>帮助性文档</tag>
+         
+         
+           
+             
+              <breadCrumb title="C/C++" url="http://www.kuunnn.cc/categories/C-C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.kuunnn.cc//articles/%E7%B1%BB%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F.html</loc>
-    <lastmod>2018-07-14T14:23:33.799Z</lastmod>
+    <lastmod>2018-09-01T08:01:33.912Z</lastmod>
     <data>
         <display>
         <title>C++：类中的构造函数的调用顺序</title>
         <pubTime>2018-07-10T14:35:38.000Z</pubTime>
         
-        <tag>C++</tag>
+        <tag>C/C++</tag>
          
         <tag>编程</tag>
          
@@ -26,13 +50,13 @@
     
   <url>
     <loc>http://www.kuunnn.cc//articles/string%E7%B1%BB%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB.html</loc>
-    <lastmod>2018-07-12T01:36:26.243Z</lastmod>
+    <lastmod>2018-09-01T08:01:21.332Z</lastmod>
     <data>
         <display>
         <title>string类常用函数汇总</title>
         <pubTime>2018-06-12T03:19:14.000Z</pubTime>
         
-        <tag>C++</tag>
+        <tag>C/C++</tag>
          
         <tag>编程</tag>
          
@@ -41,7 +65,55 @@
          
            
              
-              <breadCrumb title="C++" url="http://www.kuunnn.cc/categories/C/"/>
+              <breadCrumb title="C/C++" url="http://www.kuunnn.cc/categories/C-C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuunnn.cc//articles/C-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E6%96%87%E4%BB%B6%E6%B5%81.html</loc>
+    <lastmod>2018-09-01T08:01:12.337Z</lastmod>
+    <data>
+        <display>
+        <title>C++文件操作与文件流</title>
+        <pubTime>2018-05-15T15:47:53.000Z</pubTime>
+        
+        <tag>C/C++</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>帮助性文档</tag>
+         
+         
+           
+             
+              <breadCrumb title="C/C++" url="http://www.kuunnn.cc/categories/C-C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuunnn.cc//articles/Markdown-%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2%E5%A4%A7%E5%B0%8F.html</loc>
+    <lastmod>2018-09-01T08:00:58.989Z</lastmod>
+    <data>
+        <display>
+        <title>Markdown-字体\颜色\大小</title>
+        <pubTime>2018-05-09T16:00:00.000Z</pubTime>
+        
+        <tag>帮助性文档</tag>
+         
+        <tag>建站</tag>
+         
+        <tag>Markdown</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="http://www.kuunnn.cc/categories/Markdown/"/>
           
         </display>
     </data>
@@ -50,7 +122,7 @@
     
   <url>
     <loc>http://www.kuunnn.cc//articles/%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99.html</loc>
-    <lastmod>2018-07-12T01:36:26.239Z</lastmod>
+    <lastmod>2018-09-01T08:00:41.880Z</lastmod>
     <data>
         <display>
         <title>超详细：建立属于自己的网站</title>
@@ -77,56 +149,8 @@
 
     
   <url>
-    <loc>http://www.kuunnn.cc//articles/Markdown-%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2%E5%A4%A7%E5%B0%8F.html</loc>
-    <lastmod>2018-07-12T01:36:26.234Z</lastmod>
-    <data>
-        <display>
-        <title>Markdown-字体\颜色\大小</title>
-        <pubTime>2018-05-09T16:00:00.000Z</pubTime>
-        
-        <tag>帮助性文档</tag>
-         
-        <tag>建站</tag>
-         
-        <tag>Markdown</tag>
-         
-         
-           
-             
-              <breadCrumb title="Markdown" url="http://www.kuunnn.cc/categories/Markdown/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.kuunnn.cc//articles/C-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E6%96%87%E4%BB%B6%E6%B5%81.html</loc>
-    <lastmod>2018-07-12T01:36:26.224Z</lastmod>
-    <data>
-        <display>
-        <title>C++文件操作与文件流</title>
-        <pubTime>2018-05-15T15:47:53.000Z</pubTime>
-        
-        <tag>C++</tag>
-         
-        <tag>编程</tag>
-         
-        <tag>帮助性文档</tag>
-         
-         
-           
-             
-              <breadCrumb title="C++" url="http://www.kuunnn.cc/categories/C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.kuunnn.cc//articles/%E5%81%9C%E7%94%B5%E5%BF%AB%E4%B9%90.html</loc>
-    <lastmod>2018-07-12T01:36:26.215Z</lastmod>
+    <lastmod>2018-09-01T08:00:26.329Z</lastmod>
     <data>
         <display>
         <title>停电快乐</title>
