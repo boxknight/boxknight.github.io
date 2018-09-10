@@ -8,9 +8,9 @@
         <category>C/C++</category>
       </categories>
       <tags>
+        <tag>帮助性文档</tag>
         <tag>C/C++</tag>
         <tag>编程</tag>
-        <tag>帮助性文档</tag>
       </tags>
   </entry>
   <entry>
@@ -18,9 +18,9 @@
     <url>%2F%2Farticles%2F%E7%B1%BB%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F.html</url>
     <content type="text"><![CDATA[C++类中各种类构造函数的调用顺序汇总。 C++中，对象是由“底层向上”开始构造，因此在创建实例时，先执行基类的构造函数，再执行派生类的构造函数。 如果只是忘记规则需要翻阅，可以直接跳转到 总结 。如果想更清晰的明白，可以慢慢阅读全文。 单继承 如果遇到多级继承，构造函数会先调用父类的构造函数。如上图，A是B的父类，B是C的父类。此时如果创建类C的实例，就会先执行类A的构造函数，再执行类B的构造函数，最后执行类C的构造函数。如下图代码。 123456789101112131415161718192021222324252627282930313233#include&lt;iostream&gt;using namespace std;class A&#123; public: A()&#123; cout&lt;&lt;"A OK"&lt;&lt;endl; &#125; &#125;;class B:public A&#123; public: B()&#123; cout&lt;&lt;"B OK"&lt;&lt;endl; &#125;&#125;; class C:public B&#123; public: C()&#123; cout&lt;&lt;"C OK"&lt;&lt;endl; &#125;&#125;;int main()&#123; A a; cout&lt;&lt;endl; B b; cout&lt;&lt;endl; C c; return 0;&#125; 上述代码的执行结果为 12345678A OKA OKB OKA OKB OKC OK 由此我们可以看出，再在多级继承中，C++会先调用最底层基类的构造函数，再一层一层的向上调用。 也可以这样理解，在创建类C的实例时，先调用其父类类B的构造函数，在调用类B构造函数时，则会先调用B类的父类类A的构造函数，由于类A没有父类，因此在执行完类A构造函数后，再执行类B构造函数，最后执行类C构造函数 多继承 如果一个派生类有两个父类时，构造函数也是由父类先构造，不过父类构造函数的调用顺序是由继承列表所规定的顺序所决定的。 1234567891011121314151617181920212223242526272829#include&lt;iostream&gt;using namespace std;class A&#123; public: A()&#123; cout&lt;&lt;"A OK"&lt;&lt;endl; &#125; &#125;;class B&#123; public: B()&#123; cout&lt;&lt;"B OK"&lt;&lt;endl; &#125;&#125;; class C:public A,B&#123; //继承顺序 public: C()&#123; cout&lt;&lt;"C OK"&lt;&lt;endl; &#125;&#125;;int main()&#123; C c; return 0;&#125; 由于类C的继承顺序是A——B，所以先调用类A的构造函数，再调用类B的构造函数。程序运行结果如下。 123A OKB OKC OK 如果我们把类C的继承顺序修改成class C:public B,A,那么程序运行结果就会变成 123B OKA OKC OK 如果有遇到多继承的多级继承，则按照“先左后右，先父后子”的顺序执行类的构造函数。 虚继承当存在虚继承时，无论派生类的继承列表顺序为什么时，都先调用虚基类的构造函数。 1234567891011121314151617181920212223242526272829303132333435#include&lt;iostream&gt;using namespace std;class A&#123; public: A()&#123; cout&lt;&lt;"A OK"&lt;&lt;endl; &#125; &#125;;class B&#123; public: B()&#123; cout&lt;&lt;"B OK"&lt;&lt;endl; &#125;&#125;; class C:public virtual A&#123; public: C()&#123; cout&lt;&lt;"C OK"&lt;&lt;endl; &#125;&#125;;class D:public B,C&#123; public: D()&#123; cout&lt;&lt;"D OK"&lt;&lt;endl; &#125;&#125;;int main()&#123; D d; return 0;&#125; 如上图代码，虽然类D的继承顺序为先B后C，按上文“先左后右，先父后子”的顺序，应该先执行类B的构造函数，再执行类A的构造函数，但由于类C虚继承了类A，因此程序的运行结果如下 1234A OKB OKC OKD OK 优先执行虚基类的构造函数。 成员类如果在类中存在成员类，则成员类构造函数的执行先于类的构造函数，后于类的父类的构造函数。 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;iostream&gt;using namespace std;class A &#123;public: A() &#123; cout &lt;&lt; "A OK" &lt;&lt; endl; &#125;&#125;;class B &#123;public: B() &#123; cout &lt;&lt; "B OK" &lt;&lt; endl; &#125;&#125;;class C &#123;public: C() &#123; cout &lt;&lt; "C OK" &lt;&lt; endl; &#125;&#125;;class D :public B, C &#123;private: A a;public: D() &#123; cout &lt;&lt; "D OK" &lt;&lt; endl; &#125;&#125;;int main() &#123; D d; return 0;&#125; 上述程序中，类D中拥有一个类A的成员类，且拥有父类类B、类C，其程序运行结果为 1234B OKC OKA OKD OK 总结类构造函数的执行顺序为 1、虚基类构造函数执行2、基类构造函数按“先左后右，先父后子”的顺序执行3、成员类构造函数执行4、类自生构造函数执行 上述文章由我自己总结而成，难免存在一些错误、疏漏、无法理解的语句等问题，如果您发现错误、想要补充、有更好的表达方式，希望您可以给我发邮件，我的邮箱 tpenbox@outlook.com 本网站所有文章执行 CC BY-NC-SA 4.0 协议。希望您不要伤害熬夜好多为了维护网站且弱小无助寂寞的我。蟹蟹~！]]></content>
       <tags>
+        <tag>帮助性文档</tag>
         <tag>C/C++</tag>
         <tag>编程</tag>
-        <tag>帮助性文档</tag>
       </tags>
   </entry>
   <entry>
@@ -31,9 +31,9 @@
         <category>C/C++</category>
       </categories>
       <tags>
+        <tag>帮助性文档</tag>
         <tag>C/C++</tag>
         <tag>编程</tag>
-        <tag>帮助性文档</tag>
       </tags>
   </entry>
   <entry>
@@ -52,9 +52,9 @@
         <category>C/C++</category>
       </categories>
       <tags>
+        <tag>帮助性文档</tag>
         <tag>C/C++</tag>
         <tag>编程</tag>
-        <tag>帮助性文档</tag>
       </tags>
   </entry>
   <entry>
@@ -65,8 +65,8 @@
         <category>建站</category>
       </categories>
       <tags>
-        <tag>帮助性文档</tag>
         <tag>建站</tag>
+        <tag>帮助性文档</tag>
         <tag>Git</tag>
         <tag>GitHub</tag>
         <tag>Hexo</tag>
@@ -80,9 +80,9 @@
         <category>Markdown</category>
       </categories>
       <tags>
-        <tag>帮助性文档</tag>
         <tag>建站</tag>
         <tag>Markdown</tag>
+        <tag>帮助性文档</tag>
       </tags>
   </entry>
 </search>
