@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.kuunnn.cc/articles/%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99.html</loc>
+    
+    <lastmod>2019-02-03T13:37:28.527Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.kuunnn.cc/articles/OpenCV%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html</loc>
     
     <lastmod>2018-11-01T08:24:31.665Z</lastmod>
@@ -54,13 +61,6 @@
     <loc>http://www.kuunnn.cc/articles/Markdown-%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2%E5%A4%A7%E5%B0%8F.html</loc>
     
     <lastmod>2018-09-01T08:00:58.989Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.kuunnn.cc/articles/%E5%BB%BA%E7%AB%8B%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99.html</loc>
-    
-    <lastmod>2018-09-01T08:00:41.880Z</lastmod>
     
   </url>
   
